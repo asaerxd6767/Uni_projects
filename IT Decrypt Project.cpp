@@ -1,5 +1,5 @@
 //Caesar Cipher: Decrypt version.
-//Version#1.99
+//Version#2
 #include <iostream>
 #include <string>
 using namespace std;
@@ -11,9 +11,8 @@ int main()
     string text, cipher;
     int key;
     char q1;
-    start:
-    cout << "\n\nEnter Cipher text (using: / for space): ";
-    cin >> cipher;
+    cout << "\n\nEnter uppercase Cipher text: ";
+    getline(cin, cipher);
     cout << "\nDo you know the key?(y/n) ";
     cin >> q1;
 
@@ -24,8 +23,8 @@ int main()
 
         for(int i = 0; i <= cipher.length(); ++i)
         {
-            if(cipher[i] == 47)
-            {text += char(32); continue;}
+            if(cipher[i] == char(32))
+            {text += char(32);}
 
             else if(cipher[i] >= 'A' && cipher[i] <= 'Z')
             {
@@ -37,9 +36,8 @@ int main()
             f = 0;
             };            
         }
-
-    cout << "The text: " << text;
-    text.clear();
+    cout << "The cipher text: " << cipher;
+    cout << "\nThe plain text:  " << text;
     }
     else if(q1 == 'n' || q1 == 'N')
     {
@@ -49,23 +47,21 @@ int main()
         {
             for(int z = 0; z < cipher.length(); z++)
             {
+            if(cipher[z] == char(32))
+            {text += char(32);}
+            else if(cipher[z] >= 'A' && cipher[z] <= 'Z')
+            {
             int g = ((cipher[z] - 65) % 26) + 97 - j;
             if(g < 97)
             g = g + 26;
-
             text += g;
             g = 0;
             }
+            }
         cout << j << "'s Key: " << text << endl;
-        text.clear();
         }
     }
-
-    char q2;
-	cout << endl << "\nAnother word?(y/n): ";
-	cin >> q2;
-	if(q2 == 'y' || q2 == 'Y')
-    goto start;
+    cout << "\n\n================================\nMade by: Asser Mohammed Youssef.\n================================\n";
 return 0;
 }
 /*
@@ -75,9 +71,11 @@ ASCII code is used for the calculations and converts every char from the text.
 The system converts every character of the text into ASCII code then removes the key.
 If the user doesn't know the key, the system will generate 10 texts.
 
-Problems to fix:
-DONE v1.5 - make the system convert uppercase encrypted text into lowercase plain text (used ASCII code)
-TEMP DONE v1.99 - fix the space problem (TEMP fixed, using slash for space.)
+Versions:
+v1.0 (15/11/24)- converts uppercase cipher word into lowercase text.
+v1.2 (19/11/24)- fix the space problem (TEMP fixed, using slash for space.)
+v1.5 (21/11/24)- Added keys generating from (1-10).
+v2.0 (23/11/24)- the final version.
 
 Made by: Asser Mohammed Youssef.
 */

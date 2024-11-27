@@ -1,14 +1,12 @@
 //Rail fence: Encrypted version.
-//Version#1
+//Version#1.5
 #include <iostream>
 using namespace std;
 
 string stc(string result){
 	string capital;
-	for(int i = 0;i <= result.length(); i++){
-	if(result[i] >= 'a' && result[i] <= 'z'){
-		capital[i] += (((result[i] - 'a') % 26) + 'A');
-		}
+	for(int i = 0;i < result.length(); i++){
+		capital += (((result[i] - 'a') % 26) + 'A');
 	}
 return capital;
 }
@@ -41,6 +39,6 @@ int main(){
 	}
 /*
 problems I'm facing:
+- the capital arc does not appear. (FIXED: v1.5)
 - cannot enter text with spaces.
-- the capital arc does not appear.
 */

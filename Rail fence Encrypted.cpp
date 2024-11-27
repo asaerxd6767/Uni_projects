@@ -17,7 +17,7 @@ int main(){
 	int depth;
 	string text;
 	cout << "Enter text: ";
-	getline(cin, text);
+	cin >> text;
 	cout << "Enter depth: ";
 	cin >> depth;
 	
@@ -25,12 +25,10 @@ int main(){
 	int z = 0;
 	for(int i = 0; i < text.length()/depth; i++){
 	for(int j = 0; j < depth; j++){
-		if(text[z] >= 'a' && text[z] <= 'z'){
 		matrix[j][i] += text[z];
-		}
 		z++;
 		}
-	}
+    }
 	string results;
 	for(int x = 0;x < depth; x++){
 	for(int y = 0;y < (text.length()/depth); y++){
@@ -38,7 +36,11 @@ int main(){
 	  }
 	}
 	cout << "\nEncrypted:  "<< results;
-	
 	cout << "\nEncrypted:  "<< stc(results);
 	return 0;
 	}
+/*
+problems I'm facing:
+- cannot enter text with spaces.
+- the capital arc does not appear.
+*/

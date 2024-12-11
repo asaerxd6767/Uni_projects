@@ -19,6 +19,7 @@ Programs:
 -- Using array let the user enter 5 numbers and make the program sort the numbers. Ex: (3, 2, 1, 4) = (1, 2, 3, 4)
 -- Using functions print the maximum value of three values.
 -- Using functions Calculate the rectangle area.
+-- Using function Calculate the following (p = n! / (n + m)!)
 
 PDF TASKS
 -- Program computes the sum of all the odd between 0 - 100
@@ -395,6 +396,25 @@ int main(){
 }
 void fun(int l, int w, int &area){
     area = l * w;
+}
+*/
+
+/*
+//program that computes the following (p = n! / (n + m)!)
+double fact(double);
+int main(){
+    double n, m, p;
+    cin >> n >> m;
+    p = fact(n) / fact(n + m);
+    cout << p;
+    return 0;
+}
+double fact(double num){
+    double fact1;
+    for(int i = 1; i < num; i++){
+        fact1 *= i;
+    }
+    return fact1;
 }
 */
 

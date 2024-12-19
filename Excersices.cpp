@@ -20,6 +20,7 @@ Programs:
 -- Using functions print the maximum value of three values.
 -- Using functions Calculate the rectangle area.
 -- Using function Calculate the following (p = n! / (n + m)!)
+-- Using function make a prime number checker
 
 PDF TASKS
 -- Program computes the sum of all the odd between 0 - 100
@@ -470,10 +471,10 @@ int main(){
 /*
 //Program to calculate the value of x^n (ex: x^4 = x*x*x*x)(r = x^n)
 int main(){
-    int x, n, r;
+    int x, n, r = 1;
     cin >> x >> n;
     for(int i = 1; i <= n; i++){
-        r = x * x;
+        r *= x;
     }
     cout << r;
     return 0;
@@ -512,5 +513,37 @@ int main(){
         cout << "The 3rd square of, " << i << " = " << i*i*i << endl << endl;
     }
     return 0;
+}
+*/
+
+/*
+//Prime number checker.
+int prime(int num);
+int main(){
+    int x;
+    cin >> x;
+    int c = prime(x);
+    
+    if(c == 1){
+        cout << x << ", is not prime.\n";
+    }
+    else if(c == 0){
+        cout << x << ", is prime.\n";
+    }
+return 0;
+}
+
+int prime(int num){
+    int checker = 0; //0 = prime || 1 = not prime
+    if(num <= 1){
+        checker = 1;
+    }
+
+    for(int i = 2; i * i <= num; i++){
+        if(num % i == 0){
+            checker = 1;
+        }
+    }
+    return checker;
 }
 */
